@@ -1,0 +1,21 @@
+title: Snap Inventory System
+description: Documentation for Snap Inventory System, a replicated, server-authoritative inventory and equipment plugin for Unreal Engine 5.8.
+brand_sub: by Snap Plugins
+brand_sub_url: /
+docs_nav: true
+search: true
+nav:
+  - title: Overview
+    url: /
+  - title: Quickstart
+    url: /Docs/QUICKSTART.html
+  - title: Reference
+    url: /Docs/
+  - title: Changelog
+    url: /CHANGELOG.html
+  - title: Support
+    url: /support/
+    root: true
+  - title: Discord
+    url: https://discord.gg/X2BRFn9Bph
+    external: true

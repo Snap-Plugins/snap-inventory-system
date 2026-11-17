@@ -1,0 +1,16 @@
+---
+layout: null
+permalink: /search.json
+---
+[
+{%- assign docs = site.pages | where_exp: "p", "p.name contains '.md'" -%}
+{%- assign first = true -%}
+{%- for p in docs -%}
+{%- unless p.path contains 'design-notes' -%}
+{%- unless first -%},{%- endunless -%}
+{%- capture ptitle -%}{%- if p.title -%}{{ p.title }}{%- elsif p.name contains 'appendix-' -%}Appendix: {{ p.name | remove: 'appendix-' | remove: '.md' | replace: '-', ' ' }}{%- else -%}{{ p.name | remove: '.md' | replace: '-', ' ' | capitalize }}{%- endif -%}{%- endcapture -%}
+{"title": {{ ptitle | jsonify }}, "url": {{ p.url | relative_url | jsonify }}, "text": {{ p.content | strip_html | normalize_whitespace | jsonify }}}
+{%- assign first = false -%}
+{%- endunless -%}
+{%- endfor -%}
+]
